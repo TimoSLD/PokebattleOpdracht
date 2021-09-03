@@ -5,7 +5,7 @@ class Pikachu extends Pokemon
 {  
     public function __construct($name = "Pikachu")
     {
-        $type = "Electric";
+        $type = "Lightning";
         $hitpoints = 60;
         $weaknesses = array(
             new Weakness("Fire", 1.5),
