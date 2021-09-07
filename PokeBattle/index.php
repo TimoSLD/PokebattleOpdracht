@@ -10,8 +10,8 @@ $pikachu = new Pikachu();
 
 $charmeleon = new Charmeleon();
 
-$pikachu->attack($pikachu, $pikachu->attacks[0], $charmeleon);
-
-$charmeleon->attack($charmeleon, $charmeleon->attacks[0], $pikachu);
-
+for ($i=0; $i < 2; $i++) { 
+    $pikachu->attack($pikachu, $pikachu->attacks[$i], $charmeleon);
+    $charmeleon->attack($charmeleon, $charmeleon->attacks[$i], $pikachu);
+}
 ?>
