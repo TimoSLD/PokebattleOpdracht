@@ -54,11 +54,14 @@ class Pokemon{
         echo "<br>".$pokemon->name . "is uitegschakeld";
             $pokemon->hitPoints = 0;
         }else{
-            $pokemon->hitPoints - $damage;
+            $pokemon->hitPoints = $pokemon->hitPoints - $damage;
             echo "<br>". $pokemon->name . " heeft nog " . $pokemon->hitPoints . " hp";
         }
+        if($pokemon->hitPoints == 0){
+            echo "<br>". $pokemon->name . " is uitgeschakeld";
+            
+           }
     }
-
 
 }
 
