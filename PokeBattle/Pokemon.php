@@ -12,9 +12,9 @@ class Pokemon{
   
 
 
-    public function __construct($type, $name, $hitpoints, $weakness, $resistance, $attacks)
+    public function __construct($energyType, $name, $hitpoints, $weakness, $resistance, $attacks)
     {
-        $this->energyType = $type;
+        $this->energyType = $energyType;
         $this->name = $name;
         $this->hitPoints = $hitpoints;
         $this->hp = $hitpoints;
@@ -28,20 +28,22 @@ class Pokemon{
     public function __toString() {
         return json_encode($this);
     }
-    
-    public function attack($attackpokemon, $attack, $pokemon){
+    /**
+     * 
+     */
+    public function attack($attackPokemon, $attack, $pokemon){
         echo "<br>". $this->name . " valt " . $pokemon->name . " aan met de " . $attack->name;
         $this->damage($attack->damage, $pokemon);
     }
 
     public function damage($damage, $pokemon){
         foreach($pokemon->weakness as $weakness){
-            if($weakness->energy_type == $this->energyType){
+            if($weakness->energyType == $this->energyType){
                 $damage = $damage * $weakness->value;  
             }
-    }
+        }
         foreach($pokemon->resistance as $resistance){
-            if($this->energyType == $resistance->energy_type){
+            if($this->energyType == $resistance->energyType){
                 $damage = $damage - $resistance->value;
             }
         }
