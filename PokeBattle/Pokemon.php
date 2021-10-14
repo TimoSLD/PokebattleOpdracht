@@ -33,7 +33,7 @@ class Pokemon{
     /**
      *  function attack
      * deze functie laat zien dat de ene pokemon de andere aanvalt.
-     * hij haalt de aanvallende pokemon op, de verdedigende en welke attack die gebruikt.
+     * hij haalt de aanvallende pokemon op, de verdedigende en de attack die die gebruikt.
      * hij stuurt de value van de damage mee en de pokemon die aangevallen wordt.
      */
     public function attack($attackPokemon, $attack, $pokemon){

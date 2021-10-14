@@ -1,0 +1,3 @@
+class = een blauwdruk voor objecten. in een class staan variabelen en methods.
+
+object = 
