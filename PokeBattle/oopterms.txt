@@ -1,3 +1,21 @@
-class = een blauwdruk voor objecten. in een class staan variabelen en methods.
+class = een blauwdruk voor objecten. in een class staan variabelen(properties) en methods(function in een class).
 
-object = 
+methods = een function in een class.
+
+propertie = variable in een class.
+
+construct = construct bouwt het object met alle informatie die we meegeven we gebruiken bijvoorbeel bij het object pikachu.
+
+object = eigenschappen van een class.
+
+public = je kan er ook bij buiten de class.
+
+private = je kan hem alleen binnen de class aanroepen.
+
+protected = je kan het niet van buiten erbij maar je kan er bij in een class en bij een class die die class extend.
+
+construct = bouwt het object met alle informatie die we hebben meegegeven.
+
+echo's moeten eruit.
+getpopulation :: aantal pokemons terug.
+
