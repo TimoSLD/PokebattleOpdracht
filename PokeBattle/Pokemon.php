@@ -10,6 +10,8 @@ class Pokemon{
     public $resistance;
     public $attacks;
 
+    public static $population = 0;
+
     public function __construct($energyType, $name, $hitpoints, $weakness, $resistance, $attacks){
         $this->energyType = $energyType;
         $this->name = $name;
@@ -18,6 +20,8 @@ class Pokemon{
         $this->weakness = $weakness;
         $this->resistance = $resistance;
         $this->attacks = $attacks;
+
+        self::$population++;
     }
 
     public function __toString() {
@@ -61,8 +65,10 @@ class Pokemon{
             
         }
         
-      $this->getPopulation($damage, $pokemon);
+      $this->calculateHealth($damage, $pokemon);
             return $damage;
+
+       
     }
      /**
      * de function getPopulation kijkt hoeveel hp de pokemon nog heeft en of die nog leeft.
@@ -74,15 +80,20 @@ class Pokemon{
      * als de hitpoints 0 is dan echo naam van verdedigende pokemon met "die is uitgeschakeld". 
      */
 
-    public function getPopulation($damage, $pokemon){
+    public function calculateHealth($damage, $pokemon){
         if($pokemon->hitPoints <= $damage){
             //echo "<br>".$pokemon->name . " is uitegschakeld";
             $pokemon->hitPoints = 0;
+            self::$population--;
 
         }else{
             $pokemon->hitPoints = $pokemon->hitPoints - $damage;
             //echo "<br>". $pokemon->name . " heeft nog " . $pokemon->hitPoints . " hp";
         }
+    }
+
+    public static function getpopulation() {
+            return self::$population;
     }
 }
 

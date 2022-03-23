@@ -20,23 +20,23 @@
 
             $charmeleon = new Charmeleon();
 
-            echo $pikachu->name . " start met " . $pikachu->hitpoints . "hp" . "<br>";
-            echo $charmeleon->name . " start met " . $charmeleon->hitpoints . "hp" . "<hr>";
+            echo $pikachu->name . " start met " . $pikachu->hitpoints . " hp" . "<br>";
+            echo $charmeleon->name . " start met " . $charmeleon->hitpoints . " hp" . "<br>";
+            echo "population= " . Pikachu::getpopulation() . "<br>" . "<hr>";
 
             for ($i=0; $i < 2; $i++) { 
                 $damage = $pikachu->attack( $pikachu->attacks[$i], $charmeleon);
                 echo "<br>". $pikachu->name . " valt " . $charmeleon->name . " aan met de " . $pikachu->attacks[$i]->name. "<br>";
                 echo "it dealt " . $damage . " damage" . "<br>";
-                echo "<br>". $charmeleon->name . " heeft nog " . $charmeleon->hitPoints . " hp" . "<hr>";
+                echo "<br>". $charmeleon->name . " heeft nog " . $charmeleon->hitPoints . " hp" . "<br>";
+                echo "population= " . Pikachu::getpopulation() . "<br>" . "<hr>";
               
                 
-                
-
                 $damage = $charmeleon->attack( $charmeleon->attacks[$i], $pikachu);
                 echo "<br>". $charmeleon->name . " valt " . $pikachu->name . " aan met de " . $charmeleon->attacks[$i]->name. "<br>";
                 echo "it dealt " . $damage . " damage" . "<br>";
-                echo "<br>". $pikachu->name . " heeft nog " . $pikachu->hitPoints . " hp" . "<hr>";
-            
+                echo "<br>". $pikachu->name . " heeft nog " . $pikachu->hitPoints . " hp" . "<br>";
+                echo "population= " . Charmeleon::getpopulation() . "<br>" . "<hr>";
             }
         ?>
     </center>
